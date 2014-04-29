@@ -1,0 +1,36 @@
+<herds>
+   <herd>
+      <id>1</id>
+      <production-type>Swine</production-type>
+      <size>19</size>
+      <location>
+         <latitude>41.30028</latitude>
+         <longitude>-91.96638</longitude>
+      </location>
+      <status>Latent</status>
+   </herd>
+
+   <herd>
+      <id>2</id>
+      <production-type>Swine</production-type>
+      <size>15</size>
+      <location>
+         <latitude>43.28833</latitude>
+         <longitude>-96.31611</longitude>
+      </location>
+      <status>Susceptible</status>
+   </herd>
+
+
+   <herd>
+      <id>3</id>
+      <production-type>Swine</production-type>
+      <size>20</size>
+      <location>
+         <latitude>42.98333</latitude>
+         <longitude>-96.13111</longitude>
+      </location>
+      <status>Susceptible</status>
+   </herd>
+</herds>
+

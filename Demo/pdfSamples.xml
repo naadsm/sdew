@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ergadm:disease-simulation
+xmlns:ergadm="http://hebb.cis.uoguelph.ca/~dastacey/Grid/ERG_ADM"
+xmlns:xdf="http://xml.gsfc.nasa.gov/XDF">
+<description>This file contains a sample scenario for an outbreak of a highly contagious disease in the midwestern United States.  This file may serve as an example that can be modified for other uses, but parameters in this file should not be considered definitive or accurate for any particular disease or situation.</description>
+<num-days>111</num-days>
+<num-runs>5</num-runs>
+
+<models>
+
+<disease-model production-type="Cattle">
+
+<latent-period>
+<point>5</point>
+<units><xdf:unit>day</xdf:unit></units>
+</latent-period>
+
+<infectious-subclinical-period>
+<uniform>
+<a>3</a>
+<b>7</b>
+</uniform>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-subclinical-period>
+
+<infectious-clinical-period>
+<triangular>
+<a>1</a>
+<c>7</c>
+<b>10</b>
+</triangular>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-clinical-period>
+
+<immunity-period>
+<gaussian>
+<mean>5</mean>
+<stddev>2</stddev>
+</gaussian>
+<units><xdf:unit>day</xdf:unit></units>
+</immunity-period>
+
+</disease-model>
+
+<disease-model production-type="Swine">
+
+<latent-period>
+<lognormal>
+<!-- The NAADSM interface calculates this zeta and sigma from the -->
+<!-- stored mean and standard deviation, as described in these references: -->
+<!-- 1) Vose, D. 1996.  Quantitative risk analysis: a guide to Monte Carlo Simulation Modelling. -->
+<!--    John Wiley and Sons, New York. -->
+<!-- 2) Palisade Corporation. 2002.  A concise summary of @RISK probability distribution functions. -->
+<!--    Available (probably illegally) from http://project.zf.jcu.cz/risk/data/distfunc.pdf -->
+<zeta>1.274723</zeta>
+<sigma>0.472381</sigma>
+</lognormal>
+<units><xdf:unit>day</xdf:unit></units>
+</latent-period>
+
+<infectious-subclinical-period>
+<gamma>
+<alpha>3</alpha>
+<beta>4</beta>
+</gamma>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-subclinical-period>
+
+<infectious-clinical-period>
+<weibull>
+<alpha>10</alpha>
+<beta>2</beta>
+</weibull>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-clinical-period>
+
+<immunity-period>
+<pearson5>
+<alpha>7</alpha>
+<beta>1</beta>
+</pearson5>
+<units><xdf:unit>day</xdf:unit></units>
+</immunity-period>
+
+</disease-model>
+
+<disease-model production-type="Sheep">
+
+<latent-period>
+<beta>
+<alpha>5</alpha>
+<beta>4</beta>
+<location>2</location>
+<scale>10</scale>
+</beta>
+<units><xdf:unit>day</xdf:unit></units>
+</latent-period>
+
+<infectious-subclinical-period>
+<beta-pert>
+<!-- NAADSM uses a set of approximations (from Davis) for the BetaPERT PDF -->
+<!-- which are slightly different from those described by Vose and Palisade. -->
+<!-- 1) Davis, R.E. http://www.cob.sjsu.edu/facstaff/davis_r/courses/QBAreader/QBAtoc.html -->
+<!-- 2) Vose, D. 1996.  Quantitative risk analysis: a guide to Monte Carlo Simulation Modelling. -->
+<!--    John Wiley and Sons, New York. -->
+<!-- 3) Palisade Corporation. 2002.  A concise summary of @RISK probability distribution functions. -->
+<!--    Available (probably illegally) from http://project.zf.jcu.cz/risk/data/distfunc.pdf -->
+<min>5</min>
+<mode>8</mode>
+<max>12</max>
+</beta-pert>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-subclinical-period>
+
+<infectious-clinical-period>
+<logistic>
+<location>12</location>
+<scale>2</scale>
+</logistic>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-clinical-period>
+
+<immunity-period>
+<loglogistic>
+<location>6</location>
+<scale>4</scale>
+</loglogistic>
+<units><xdf:unit>day</xdf:unit></units>
+</immunity-period>
+
+</disease-model>
+
+<disease-model production-type="Goats">
+
+<latent-period>
+<exponential>
+<mean>10</mean>
+</exponential>
+<units><xdf:unit>day</xdf:unit></units>
+</latent-period>
+
+<infectious-subclinical-period>
+<piecewise>
+<value>0</value>
+<p>0</p>
+<value>0.80786</value>
+<p>0.055164</p>
+<value>1.25</value>
+<p>0.166617</p>
+<value>1.769912</value>
+<p>0.364757</p>
+<value>2.245575</value>
+<p>0.394027</p>
+<value>3</value>
+<p>0.380723</p>
+<value>3.700873</value>
+<p>0.180127</p>
+<value>4.446903</value>
+<p>0.083309</p>
+<value>5</value>
+<p>0</p>
+</piecewise>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-subclinical-period>
+
+<infectious-clinical-period>
+<point>3</point>
+<units><xdf:unit>day</xdf:unit></units>
+</infectious-clinical-period>
+
+<immunity-period>
+<point>4</point>
+<units><xdf:unit>day</xdf:unit></units>
+</immunity-period>
+
+</disease-model>
+
+</models>
+
+</ergadm:disease-simulation>
+

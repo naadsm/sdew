@@ -1,0 +1,23 @@
+; dlltool --base-file C:\DOCUME~1\apreeves\LOCALS~1\Temp/cca05500.base --output-exp sdew.exp --dllname sdew.dll --output-def libsdew.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\DOCUME~1\apreeves\LOCALS~1\Temp/cca05500.def --output-lib libsdew.a
+EXPORTS
+	Attribute_By_Index @ 1
+	Attribute_By_Name @ 2
+	Attribute_Count_Scew @ 3
+	Attribute_Name @ 4
+	Attribute_Name_By_Index @ 5
+	Attribute_Next @ 6
+	Attribute_Value @ 7
+	Create_Scew_Parser_From_File @ 8
+	Create_Scew_Parser_From_String @ 9
+	Element_Attribute @ 10
+	Element_By_Index @ 11
+	Element_By_Name @ 12
+	Element_Contents @ 13
+	Element_Count_Scew @ 14
+	Element_Name @ 15
+	Element_Name_By_Index @ 16
+	Element_Next @ 17
+	Free_Parser @ 18
+	Free_RootTree @ 19
+	TestParser @ 20
+	Tree_Root_Scew @ 21

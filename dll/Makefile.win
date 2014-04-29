@@ -1,0 +1,37 @@
+# Project: sdew
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = sdew_private.res
+OBJ  = sdew.o $(RES)
+LINKOBJ  = sdew.o $(RES)
+LIBS =  -L"C:/libs/c/expat-1.95.8/lib" --no-export-all-symbols --add-stdcall-alias C:/libs/c/scew-0.4.0/lib/libscew.a C:/libs/c/expat-1.95.8/lib/libexpat.a   
+INCS =  -I"C:/libs/c/scew-0.4.0/include"  -I"C:/libs/c/expat-1.95.8/include" 
+CXXINCS =  -I"C:/libs/c/scew-0.4.0/include"  -I"C:/libs/c/expat-1.95.8/include" 
+BIN  = sdew.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1  
+CFLAGS = $(INCS) -DBUILDING_DLL=1 -Wall  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before sdew.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=libsdew.def
+STATICLIB=libsdew.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+sdew.o: sdew.c
+	$(CC) -c sdew.c -o sdew.o $(CFLAGS)
+
+sdew_private.res: sdew_private.rc 
+	$(WINDRES) -i sdew_private.rc --input-format=rc -o sdew_private.res -O coff 

@@ -1,0 +1,35 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT! */
+
+#include <windows.h> // include for version info constants
+
+
+//
+// TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
+//
+1 VERSIONINFO
+FILEVERSION 0,2,0,0
+PRODUCTVERSION 0,2,0,0
+FILETYPE VFT_DLL
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "040904E4"
+		 {
+			 VALUE "CompanyName", "Animal Population Health Institute, Colorado State University"
+			 VALUE "FileVersion", "0.2.0"
+			 VALUE "FileDescription", "Simple Delphi Expat Wrapper"
+			 VALUE "InternalName", ""
+			 VALUE "LegalCopyright", "Copyright 2006 - 2007 Animal Population Health Institute, Colorado State University"
+			 VALUE "LegalTrademarks", ""
+			 VALUE "OriginalFilename", "sdew.dll"
+			 VALUE "ProductName", "Simple Delphi Expat Wrapper"
+			 VALUE "ProductVersion", "0.2.0"
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+		 VALUE "Translation", 0x0409, 1252
+	 }
+}
+

@@ -1,0 +1,69 @@
+[Project]
+FileName=sdew.dev
+Name=sdew
+UnitCount=2
+Type=3
+Ver=1
+ObjFiles=
+Includes=C:\libs\c\scew-0.4.0\include;C:\libs\c\expat-1.95.8\include
+Libs=C:\libs\c\expat-1.95.8\lib
+PrivateResource=sdew_private.rc
+ResourceIncludes=
+MakeIncludes=
+Compiler=-DBUILDING_DLL=1 -Wall_@@_
+CppCompiler=-DBUILDING_DLL=1_@@_
+Linker=--no-export-all-symbols --add-stdcall-alias_@@_C:/libs/c/scew-0.4.0/lib/libscew.a_@@_C:/libs/c/expat-1.95.8/lib/libexpat.a_@@__@@_
+IsCpp=0
+Icon=
+ExeOutput=
+ObjectOutput=
+OverrideOutput=0
+OverrideOutputName=sdew.dll
+HostApplication=
+Folders=
+CommandLine=
+UseCustomMakefile=0
+CustomMakefile=
+IncludeVersionInfo=1
+SupportXPThemes=0
+CompilerSet=0
+CompilerSettings=0000000000000000000000
+
+[Unit1]
+FileName=sdew.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit2]
+FileName=sdew.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[VersionInfo]
+Major=0
+Minor=2
+Release=0
+Build=0
+LanguageID=1033
+CharsetID=1252
+CompanyName=Animal Population Health Institute, Colorado State University
+FileVersion=0.2.0
+FileDescription=Simple Delphi Expat Wrapper
+InternalName=
+LegalCopyright=Copyright 2006 - 2007 Animal Population Health Institute, Colorado State University
+LegalTrademarks=
+OriginalFilename=sdew.dll
+ProductName=Simple Delphi Expat Wrapper
+ProductVersion=0.2.0
+AutoIncBuildNr=0
+
